@@ -2,7 +2,6 @@
 # -*- coding utf-8 -*-
 # (c) 2024 Fomenko A V
 
-import csv
 from time import time
 from itertools import permutations
 from random import shuffle, sample, randint
@@ -113,12 +112,13 @@ class PermSort(object):
                 return False
         return True
 
+
 class DinasourSort(object):
     """TODO"""
 
     def __init__(self, arg):
         super(DinasourSort, self).__init__()
-        self.list=[]
+        self.list = []
         for i in arg:
             self.list.append(str(i))
 
@@ -151,6 +151,7 @@ class StalinSort(object):
 
         return result
 
+
 def gen(n: int) -> tuple:
     '''
     Генерирует список заданного размера из случайных целых чисел
@@ -172,12 +173,10 @@ def run(sort_obj):
 
 def main():
     arr = gen(int(input("Введите размер массива: ")))
-    # arr = gen(8)
     print(f"Ваш массив {arr}\n")
 
     sort_objs = (StoogeSort(arr), StalinSort(arr), PermSort(arr),
                  BozoSort(arr), BogoSort(arr), DinasourSort(arr))
-    # sort_objs = (DinasourSort(arr),)
 
     for i in sort_objs:
         run(i)
